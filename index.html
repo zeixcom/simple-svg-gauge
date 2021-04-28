@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="simple-svg-gauge.css">
+</head>
+
+<body>
+    <div class="simple-svg-gauge">
+        <div class="simple-svg-gauge__container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="290" height="290" viewbox="0 0 290 290" class="simple-svg-gauge__svg js-simple-svg-gauge">
+                <circle class="simple-svg-gauge__circle simple-svg-gauge__circle--above" />
+                <circle class="simple-svg-gauge__circle simple-svg-gauge__circle--mid" />
+                <circle class="simple-svg-gauge__circle simple-svg-gauge__circle--below" />
+            </svg>
+
+            <div class="simple-svg-gauge__control">
+                <div class="simple-svg-gauge__needle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="154" viewBox="0 0 8 154" class="js-simple-svg-gauge-needle">
+                        <polygon id="needle" points="4 0 5 1 8 150 4 154 0 150 3 1 4 0" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="simple-svg-gauge.js"></script>
+    <script>
+        var myGauge = new SimpleSvgGauge();
+
+        myGauge.setSections([35, 5, 60]);
+        myGauge.setStatus(29);
+    </script>
+</body>
+</html>
