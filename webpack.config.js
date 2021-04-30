@@ -10,13 +10,13 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/js/index.js',
   output: {
-    filename: 'index.js',
+    filename: 'simple-svg-gauge.js',
     path: path.resolve(__dirname, 'build'),
     library: 'SimpleSvgGauge',
     libraryTarget: 'umd',
   },
   optimization: {
-    minimize: false,
+    minimize: true,
     minimizer: [new TerserPlugin({
       extractComments: false
     })],
