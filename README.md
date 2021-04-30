@@ -24,6 +24,7 @@ SVG gauge with zero dependencies
 ```
 
 ```js
+    var SimpleSvgGauge = SimpleSvgGauge.default;
     var myGauge = new SimpleSvgGauge();
 
     // Set sections according to your circle elements in percent
