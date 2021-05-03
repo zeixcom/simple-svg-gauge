@@ -23,6 +23,21 @@ SVG gauge with zero dependencies
 </div>
 ```
 
+### Importing via NPM
+```js
+    import SimpleSvgGauge from '@zeix/simple-svg-gauge';
+
+    var myGauge = new SimpleSvgGauge();
+
+    // Set sections according to your circle elements in percent
+    myGauge.setSections([35, 5, 60]);
+
+    // Set status of the needle in percent
+    myGauge.setStatus(29);
+```
+
+
+### Script Tag
 ```js
     var SimpleSvgGauge = SimpleSvgGauge.default;
     var myGauge = new SimpleSvgGauge();
