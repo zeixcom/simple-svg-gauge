@@ -1,7 +1,7 @@
 .simple-svg-gauge {
   overflow: hidden;
-  padding-top: 3px; /* needle top */
-  padding-bottom: 20px; /* needle control */
+  padding-top: 3px;
+  padding-bottom: 20px;
 }
 
 .simple-svg-gauge__container {
@@ -25,15 +25,15 @@
 }
 
 .simple-svg-gauge__circle--above {
-  stroke: #1b8574;
+  stroke: #26a691;
 }
 
 .simple-svg-gauge__circle--mid {
-  stroke: #9a9d9e;
+  stroke: #a4a7a8;
 }
 
 .simple-svg-gauge__circle--below {
-  stroke: #dd8544;
+  stroke: #e28f46;
 }
 
 .simple-svg-gauge__control::before {
@@ -55,7 +55,10 @@
   left: 0;
   width: 100%;
   height: 108%;
+  fill: #353838;
   transform: rotate(270deg) translate(0, 6px);
   transform-origin: bottom center;
   transition: 0.35s transform cubic-bezier(0.175, 0.885, 0.32, 1.125);
 }
+
+/*# sourceMappingURL=simple-svg-gauge.css.map */

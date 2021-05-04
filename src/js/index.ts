@@ -1,37 +1,45 @@
+declare var gsap: any;
+
 class SimpleSvgGauge {
+  width: number;
+  height: number;
+  circles: NodeListOf<SVGCircleElement>;
+  needle: SVGElement;
+  gauge: SVGElement;
+
   constructor() {
     this.gauge = document.querySelector(".js-simple-svg-gauge");
     this.needle = document.querySelector(".js-simple-svg-gauge-needle");
     this.circles = this.gauge.querySelectorAll("circle");
-    this.width = this.gauge.getAttribute("width");
-    this.height = this.gauge.getAttribute("height");
+    this.width = Number(this.gauge.getAttribute("width"));
+    this.height = Number(this.gauge.getAttribute("height"));
   }
 
-  setSections = function (sections) {
+  setSections = (sections: number[]) => {
     const $this = this;
-    const currentRotation = 180;
-    let lastRotation = 0;
+    const currentRotation: number = 180;
+    let lastRotation: number = 0;
 
     // loop all circles
-    [].forEach.call(this.circles, function (el, i) {
+    [].forEach.call(this.circles, (el: SVGElement, i: number) => {
       const strokeWidth = parseInt(window.getComputedStyle(el).strokeWidth, 10);
 
-      el.setAttribute("cx", $this.width / 2);
-      el.setAttribute("cy", $this.height / 2);
-      el.setAttribute("r", $this.width / 2 - strokeWidth / 2);
+      el.setAttribute("cx", String($this.width / 2));
+      el.setAttribute("cy", String($this.height / 2));
+      el.setAttribute("r", String($this.width / 2 - strokeWidth / 2));
 
-      const radius = el.getAttribute("r");
+      const radius: number = Number(el.getAttribute("r"));
       const circumference = radius * 2 * Math.PI;
       const percentage = $this.validatePercentage(sections[i]);
-      const rotation = parseInt(currentRotation + lastRotation, 10);
+      const rotation = currentRotation + lastRotation;
       let offset = circumference - ((percentage / 100) * circumference) / 2;
 
       if (i < $this.circles.length - 1) {
         offset += 2;
       }
 
-      el.style.strokeDasharray = circumference + " " + circumference;
-      el.style.strokeDashoffset = offset;
+      el.style.strokeDasharray = `${circumference} ${circumference}`;
+      el.style.strokeDashoffset = String(offset);
 
       // use gsap for transform if available for IE 11 support
       if (typeof gsap !== "undefined") {
@@ -48,18 +56,18 @@ class SimpleSvgGauge {
     });
   };
 
-  setStatus = function (percentage) {
+  setValue = (percentage: number) => {
     const degree = this.percentageToDegree(this.validatePercentage(percentage));
 
     this.needle.style.transform =
-      "rotate(" + parseInt(270 + degree, 10) + "deg) translate(0, 6px)";
+      "rotate(" + Number(270 + degree) + "deg) translate(0, 6px)";
   };
 
-  percentageToDegree = function (percentage) {
+  private percentageToDegree = (percentage: number): number => {
     return (percentage / 100) * 180; // 180 deg for half circle
   };
 
-  validatePercentage = function (percentage) {
+  private validatePercentage = (percentage: number): number => {
     if (!(percentage >= 0 && percentage <= 100)) {
       percentage = 0;
       console.error("Please use valid percentage values.");
