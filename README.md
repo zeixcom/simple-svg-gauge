@@ -23,7 +23,11 @@ SVG gauge with zero dependencies
 </div>
 ```
 
-### Importing via NPM
+### Importing in a Typescript project
+```
+    npm install @zeix/simple-svg-gauge
+```
+
 ```js
     import SimpleSvgGauge from '@zeix/simple-svg-gauge';
 
@@ -37,7 +41,11 @@ SVG gauge with zero dependencies
 ```
 
 
-### Script Tag
+### Importing via script tag
+```html
+<script src="simple-svg-gauge.js"></script>
+```
+
 ```js
     var SimpleSvgGauge = SimpleSvgGauge.default;
     var myGauge = new SimpleSvgGauge();
