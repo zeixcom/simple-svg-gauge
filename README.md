@@ -25,19 +25,19 @@ SVG gauge with zero dependencies
 
 ### Importing in a Typescript project
 ```
-    npm install @zeix/simple-svg-gauge
+npm install @zeix/simple-svg-gauge
 ```
 
 ```js
-    import SimpleSvgGauge from '@zeix/simple-svg-gauge';
+import SimpleSvgGauge from '@zeix/simple-svg-gauge';
 
-    var myGauge = new SimpleSvgGauge();
+var myGauge = new SimpleSvgGauge();
 
-    // Set sections according to your circle elements in percent
-    myGauge.setSections([35, 5, 60]);
+// Set sections according to your circle elements in percent
+myGauge.setSections([35, 5, 60]);
 
-    // Set status of the needle in percent
-    myGauge.setStatus(29);
+// Set status of the needle in percent
+myGauge.setStatus(29);
 ```
 
 
@@ -47,14 +47,14 @@ SVG gauge with zero dependencies
 ```
 
 ```js
-    var SimpleSvgGauge = SimpleSvgGauge.default;
-    var myGauge = new SimpleSvgGauge();
+var SimpleSvgGauge = SimpleSvgGauge.default;
+var myGauge = new SimpleSvgGauge();
 
-    // Set sections according to your circle elements in percent
-    myGauge.setSections([35, 5, 60]);
+// Set sections according to your circle elements in percent
+myGauge.setSections([35, 5, 60]);
 
-    // Set status of the needle in percent
-    myGauge.setStatus(29);
+// Set status of the needle in percent
+myGauge.setStatus(29);
 ```
 
 ## Browser Support
