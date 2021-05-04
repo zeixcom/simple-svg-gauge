@@ -25,15 +25,15 @@
 }
 
 .simple-svg-gauge__circle--above {
-  stroke: #1b8574;
+  stroke: #26a691;
 }
 
 .simple-svg-gauge__circle--mid {
-  stroke: #9a9d9e;
+  stroke: #a4a7a8;
 }
 
 .simple-svg-gauge__circle--below {
-  stroke: #dd8544;
+  stroke: #e28f46;
 }
 
 .simple-svg-gauge__control::before {
