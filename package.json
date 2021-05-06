@@ -2,7 +2,7 @@
   "name": "@zeix/simple-svg-gauge",
   "version": "1.1.0",
   "description": "SVG gauge with zero dependencies",
-  "main": "src/js/index.ts",
+  "main": "build/simple-svg-gauge.js",
   "types": "src/js/index.d.ts",
   "scripts": {
     "start": "webpack serve",
