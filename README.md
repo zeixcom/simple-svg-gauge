@@ -33,6 +33,9 @@ import SimpleSvgGauge from '@zeix/simple-svg-gauge';
 
 var myGauge = new SimpleSvgGauge();
 
+// Init gauge
+myGauge.init();
+
 // Set sections according to your circle elements in percent
 myGauge.setSections([35, 5, 60]);
 
@@ -49,6 +52,9 @@ myGauge.setStatus(29);
 ```js
 var SimpleSvgGauge = SimpleSvgGauge.default;
 var myGauge = new SimpleSvgGauge();
+
+// Init gauge
+myGauge.init();
 
 // Set sections according to your circle elements in percent
 myGauge.setSections([35, 5, 60]);
