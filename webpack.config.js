@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     library: 'SimpleSvgGauge',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   optimization: {
     minimize: true,
