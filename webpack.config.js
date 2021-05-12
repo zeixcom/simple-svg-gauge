@@ -13,14 +13,14 @@ module.exports = {
     libraryTarget: 'umd',
   },
   optimization: {
-    minimize: true
+    minimize: true,
   },
   devServer: {
     open: true,
     hot: true,
     host: 'localhost',
     static: path.join(__dirname, 'build'),
-    port: 8080
+    port: 8080,
   },
   resolve: {
     extensions: [ '.ts', '.js' ],
@@ -35,6 +35,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new PrettierPlugin()
+    new PrettierPlugin(),
   ]
 };
